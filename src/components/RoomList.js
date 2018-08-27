@@ -5,7 +5,8 @@ class RoomList extends Component {
     super(props);
 
     this.state = {
-      rooms: []
+      rooms: [],
+      value: ""
     };
     this.roomsRef = this.props.firebase.database().ref("rooms");
   }
@@ -18,14 +19,48 @@ class RoomList extends Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  createRoom(event) {
+    event.preventDefault();
+    this.roomsRef.push({
+      name: this.state.value
+    });
+  }
+
   render() {
     return (
-      <div id="roomlist">
-        {this.state.rooms.map(room => (
-          <div id="roomsSideBar" key={room.key}>
-            {room.name}
-          </div>
-        ))}
+      <div className="roomSidenav">
+        <div id="roomlist">
+          {this.state.rooms.map(room => (
+            <a key={room.key}>{room.name}</a>
+          ))}
+        </div>
+        <form ref="form" onSubmit={e => this.createRoom(e)}>
+          <fieldset id="new-fieldset">
+            <legend />
+            <p>
+              <label htmlFor="room-name" />
+              <input
+                type="text"
+                id="room-name"
+                name="newRoom"
+                value={this.state.value}
+                onChange={e => this.handleChange(e)}
+              />
+              <button
+                id="addRoom"
+                type="submit"
+                name="addRoom"
+                value="Add Room"
+              >
+                Add Room
+              </button>
+            </p>
+          </fieldset>
+        </form>
       </div>
     );
   }

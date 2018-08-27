@@ -1,5 +1,42 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+#new-fieldset {
+  border: black;
+}
+.roomSidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  color: beige;
+}
+
+.roomSidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.roomSidenav a:hover {
+  color: #f1f1f1;
+}
+
+main {
+  margin-left: 155px;
+  font-size: 25px;
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .roomSidenav {
+    padding-top: 15px;
+  }
+  .roomSidenav a {
+    font-size: 18px;
+  }
 }
