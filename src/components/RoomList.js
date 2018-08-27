@@ -22,7 +22,9 @@ class RoomList extends Component {
     return (
       <div id="roomlist">
         {this.state.rooms.map(room => (
-          <div key={room.key}>{room[name]}</div>
+          <div id="roomsSideBar" key={room.key}>
+            {room.name}
+          </div>
         ))}
       </div>
     );
