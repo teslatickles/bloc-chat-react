@@ -28,6 +28,7 @@ class RoomList extends Component {
     this.roomsRef.push({
       name: this.state.value
     });
+    this.setState({ value: "" });
   }
 
   render() {
