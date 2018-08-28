@@ -28,6 +28,7 @@ class MessageList extends Component {
       msg: this.state.value
     });
     event.preventDefault();
+    this.setState({ value: "" });
   }
 
   render() {
