@@ -20,14 +20,19 @@ class MessageList extends Component {
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({
+      value: event.target.value
+    });
   }
 
-  createMessage(event) {
+  createMessage(e) {
+    e.preventDefault();
     this.msgRef.push({
-      msg: this.state.value
+      content: this.state.value,
+      roomId: this.props.activeRoom.key,
+      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+      userId: -1
     });
-    event.preventDefault();
     this.setState({ value: "" });
   }
 
@@ -35,13 +40,15 @@ class MessageList extends Component {
     return (
       <div id="message-list">
         <div>
-          {this.state.messages.map(message => (
-            <a className="single-message" key={message.key}>
-              {message.msg}
-            </a>
-          ))}
+          {this.state.messages
+            .filter(message => message.roomId === this.props.activeRoom.key)
+            .map(message => (
+              <a className="single-message" key={message.key}>
+                {message.content}
+              </a>
+            ))}
         </div>
-        <form ref="form" onSubmit={() => this.createMessage()}>
+        <form ref="form" onSubmit={e => this.createMessage(e)}>
           <p>
             <label htmlFor="msg-entry" />
             <input

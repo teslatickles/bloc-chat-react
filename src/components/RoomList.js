@@ -23,8 +23,7 @@ class RoomList extends Component {
     this.setState({ value: event.target.value });
   }
 
-  createRoom(event) {
-    event.preventDefault();
+  createRoom() {
     this.roomsRef.push({
       name: this.state.value
     });
@@ -35,8 +34,11 @@ class RoomList extends Component {
     return (
       <div className="roomSidenav">
         <div id="roomlist">
+          <h1 id="active-room">{this.props.activeRoom.name}</h1>
           {this.state.rooms.map(room => (
-            <a key={room.key}>{room.name}</a>
+            <a key={room.key} onClick={() => this.props.handleClick(room)}>
+              {room.name}
+            </a>
           ))}
         </div>
         <form ref="form" onSubmit={e => this.createRoom(e)}>
