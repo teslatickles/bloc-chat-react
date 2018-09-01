@@ -21,6 +21,17 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script>
+        window.onscroll = function () { stickyIt() };
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function stickyIt() {
+            if (window.pageOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }</script>
     <title>React App</title>
 </head>
 

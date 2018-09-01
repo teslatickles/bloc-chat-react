@@ -38,8 +38,8 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div id="message-list">
-        <div>
+      <div>
+        <div id="message-list">
           {this.state.messages
             .filter(message => message.roomId === this.props.activeRoom.key)
             .map(message => (
@@ -48,20 +48,22 @@ class MessageList extends Component {
               </a>
             ))}
         </div>
-        <form ref="form" onSubmit={e => this.createMessage(e)}>
-          <p>
-            <label htmlFor="msg-entry" />
-            <input
-              type="text"
-              id="msg-entry"
-              value={this.state.value}
-              onChange={e => this.handleChange(e)}
-            />
-            <button id="post-msg" type="submit">
-              Post
-            </button>
-          </p>
-        </form>
+        <div id="new-msg-bar">
+          <form ref="form" onSubmit={e => this.createMessage(e)}>
+            <p>
+              <label htmlFor="msg-entry" />
+              <textarea
+                type="text"
+                id="msg-entry"
+                value={this.state.value}
+                onChange={e => this.handleChange(e)}
+              />
+              <button id="post-msg" type="submit">
+                Post
+              </button>
+            </p>
+          </form>
+        </div>
       </div>
     );
   }

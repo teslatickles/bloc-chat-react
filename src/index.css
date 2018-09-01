@@ -1,3 +1,32 @@
+#navbar {
+  overflow: hidden;
+  background-color: #333d33;
+  float: top;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#username {
+  color: #8d8d8d;
+  display: block;
+}
+
+#log-buttons {
+  padding-top: 8px;
+}
 #active-room {
   color: #818181;
   display: block;
@@ -10,26 +39,53 @@
   border: black;
 }
 
+.Frame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
 #message-list {
   display: block;
   height: 100%;
+  padding: 16px;
   z-index: 1;
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+#new-msg-bar {
+  display: block;
+  overflow: hidden;
+  background-color: darkred;
+  float: bottom;
+  flex: 0 0 auto;
+  width: 100;
+  text-align: center;
 }
 
 #form {
   display: block;
   width: 20%;
-  z-index: 1;
+  flex: auto auto auto;
+  z-index: 2;
   margin-left: 15%;
-  bottom: 5%;
+}
+
+#post-msg {
+  position: relative;
+  border-radius: 5px;
+  left: -20%;
 }
 
 #msg-entry {
   display: block;
-  width: 15%;
+  width: 16%;
   height: 100%;
   margin-left: 15%;
   line-height: 200%;
+  padding: 5px;
 }
 
 .single-message {
