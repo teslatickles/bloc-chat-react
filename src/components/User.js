@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
 
 class User extends Component {
   constructor(props) {
@@ -33,13 +34,13 @@ class User extends Component {
           </section>
           <section id="log-buttons">
             {!this.props.user ? (
-              <button id="sign-in" onClick={() => this.signIn()}>
+              <Button id="sign-in" onClick={() => this.signIn()}>
                 Login
-              </button>
+              </Button>
             ) : null}
-            <button id="sign-out" onClick={() => this.signOut()}>
+            <Button id="sign-out" onClick={() => this.signOut()}>
               Log out
-            </button>
+            </Button>
           </section>
         </div>
       </div>

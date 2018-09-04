@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 class RoomList extends Component {
   constructor(props) {
@@ -25,7 +27,7 @@ class RoomList extends Component {
 
   createRoom() {
     this.roomsRef.push({
-      name: this.state.value
+      name: this.state.value != "" ? this.state.value : `untitled room`
     });
     this.setState({ value: "" });
   }
@@ -34,7 +36,7 @@ class RoomList extends Component {
     return (
       <div className="roomSidenav">
         <div id="roomlist">
-          <h1 id="active-room">{this.props.activeRoom.name}</h1>
+          <h1 id="chat-name">scat chat fervor</h1>
           {this.state.rooms.map(room => (
             <a key={room.key} onClick={() => this.props.handleClick(room)}>
               {room.name}
@@ -46,21 +48,23 @@ class RoomList extends Component {
             <legend />
             <p>
               <label htmlFor="room-name" />
-              <input
+              <TextField
                 type="text"
                 id="room-name"
                 name="newRoom"
                 value={this.state.value}
                 onChange={e => this.handleChange(e)}
               />
-              <button
+              <Button
+                variant="contained"
+                color="primary"
                 id="addRoom"
                 type="submit"
                 name="addRoom"
                 value="Add Room"
               >
                 Add Room
-              </button>
+              </Button>
             </p>
           </fieldset>
         </form>
