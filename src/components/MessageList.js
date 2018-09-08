@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
+import menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Favorite from "@material-ui/icons/Favorite";
+import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 
 class MessageList extends Component {
   constructor(props) {
@@ -40,10 +48,8 @@ class MessageList extends Component {
 
   deleteMessage(e) {
     e.preventDefault();
-    this.props.firebase
-      .database()
-      .ref(this.messages.e)
-      .remove();
+    const ref = this.props.firebase.database().ref("messages/");
+    const query = "";
   }
 
   render() {
@@ -58,6 +64,8 @@ class MessageList extends Component {
               <col id="user" />
               <col id="msg-content" />
               <col id="time-stamp" />
+              <col id="trash" />
+              <col id="favorite" />
             </colgroup>
             <tbody>
               {!this.props.activeRoom.name
@@ -74,13 +82,26 @@ class MessageList extends Component {
                           {new Date(message.sentAt * 1000).toLocaleDateString(
                             "en-US"
                           )}
-                          <br />
-                          <Button
+                        </td>
+                        <td>
+                          <IconButton
                             id="del-msg"
+                            aria-label="Delete"
                             onClick={e => this.deleteMessage(e)}
                           >
-                            X
-                          </Button>
+                            <DeleteIcon />
+                          </IconButton>
+                        </td>
+                        <td id="heart-icon">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                icon={<FavoriteBorder />}
+                                checkedIcon={<Favorite />}
+                                value="checkedH"
+                              />
+                            }
+                          />
                         </td>
                       </tr>
                     ))}
@@ -94,8 +115,11 @@ class MessageList extends Component {
               <TextField
                 type="text"
                 id="msg-entry"
+                label="Express yourself"
+                placeholder="かくかくしかじか"
                 multiline={true}
                 fullWidth={true}
+                autoFocus={true}
                 value={this.state.value}
                 onChange={e => this.handleChange(e)}
               />

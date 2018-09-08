@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Icon from "@material-ui/core/Icon";
+import IconButton from "@material-ui/core/IconButton";
 
 class RoomList extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class RoomList extends Component {
 
   createRoom() {
     this.roomsRef.push({
-      name: this.state.value != "" ? this.state.value : `untitled room`
+      name: this.state.value !== "" ? this.state.value : `untitled room`
     });
     this.setState({ value: "" });
   }
@@ -36,14 +38,20 @@ class RoomList extends Component {
     return (
       <div className="roomSidenav">
         <div id="roomlist">
-          <h1 id="chat-name">scat chat fervor</h1>
+          <div id="room-top-bar">
+            <h1 id="chat-name">ChatAt</h1>
+            <Icon id="chat-icon" class="material-icons">
+              forum
+            </Icon>
+          </div>
           {this.state.rooms.map(room => (
             <a key={room.key} onClick={() => this.props.handleClick(room)}>
               {room.name}
             </a>
           ))}
         </div>
-        <form ref="form" onSubmit={e => this.createRoom(e)}>
+        <form ref="form" id="room-btm-bar" onSubmit={e => this.createRoom(e)}>
+          <div id="newChat-dialog">start a new chat: </div>
           <fieldset id="new-fieldset">
             <legend />
             <p>
@@ -55,7 +63,7 @@ class RoomList extends Component {
                 value={this.state.value}
                 onChange={e => this.handleChange(e)}
               />
-              <Button
+              <IconButton
                 variant="contained"
                 color="primary"
                 id="addRoom"
@@ -63,8 +71,10 @@ class RoomList extends Component {
                 name="addRoom"
                 value="Add Room"
               >
-                Add Room
-              </Button>
+                <i id="newRoom-icon" class="material-icons">
+                  meeting_room
+                </i>
+              </IconButton>
             </p>
           </fieldset>
         </form>
