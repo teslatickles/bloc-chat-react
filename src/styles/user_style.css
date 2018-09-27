@@ -1,0 +1,49 @@
+#user-card {
+  display: block;
+  position: relative;
+  background-color: peru;
+  height: auto;
+  width: 33%;
+  border-radius: 10px;
+  margin-left: 8%;
+  padding: 0.2em;
+  margin-top: 2%;
+}
+
+#user-header {
+  display: block;
+  position: absolute;
+  font-size: 16px;
+  font-family: monospace;
+  color: steelblue;
+  margin-left: 15%;
+  top: 95%;
+  left: 50%;
+}
+
+#sign-in {
+  font-size: 15px;
+  padding-right: 0px;
+  right: 11%;
+  color: darkslategray;
+}
+
+#sign-out {
+  font-size: 14px;
+  right: 11%;
+  color: darkslategray;
+}
+
+#profile-pic {
+  display: inline;
+  position: relative;
+  right: 38%;
+}
+
+@media screen and (max-width: 768px) {
+  #user-card {
+    position: fixed;
+    width: 80%;
+    top: 5%;
+  }
+}

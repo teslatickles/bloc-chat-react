@@ -1,0 +1,146 @@
+#chat-name {
+  top: 0;
+  display: block;
+  position: sticky;
+  font-size: 28px;
+  margin-top: 4%;
+  color: whitesmoke;
+  overflow: hidden;
+  align-content: center;
+  left: 15%;
+}
+
+#exit-sidebar {
+  color: brown;
+  position: absolute;
+  display: inline;
+  top: 3%;
+  left: 2%;
+}
+
+#chat-icon {
+  display: inline;
+  font-size: 105%;
+  color: peru;
+}
+
+#roomlist {
+  display: block;
+  padding-top: 3px;
+  cursor: pointer;
+  align-content: center;
+  overflow: auto;
+  height: auto;
+}
+
+#room-header {
+  left: 13%;
+  position: relative;
+  float: left;
+}
+
+#newRoom-icon {
+  color: whitesmoke;
+  padding: 1%;
+}
+
+#room-trash {
+  position: relative;
+  float: right;
+  z-index: 15;
+  margin-right: 27%;
+  height: 10%;
+  width: 10%;
+}
+
+#addRoom {
+  margin-top: 8px;
+}
+
+#room-name {
+  background-color: wheat;
+  width: 15%;
+  padding-bottom: 2%;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.roomSidenav {
+  display: block;
+  height: 100%;
+  width: 14%;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  overflow-y: none;
+  padding-top: 20px;
+  color: beige;
+  margin-right: 15px;
+}
+
+.roomSidenav a {
+  display: block;
+  padding: 5px 5px 3px 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: lightslategray;
+  position: relative;
+}
+
+.roomSidenav a:hover {
+  color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+  .roomSidenav {
+    padding-top: 5px;
+  }
+  .roomSidenav a {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .roomSidenav {
+    width: 25%;
+  }
+}
+
+#room-top-bar {
+  display: block;
+  padding-top: 2%;
+  background-color: #111;
+  position: sticky;
+  top: 0%;
+  z-index: 10;
+  width: auto;
+  height: auto;
+}
+
+#room-btm-bar {
+  display: block;
+  background-color: #111;
+  position: sticky;
+  padding-top: 10px;
+  bottom: 0%;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+#newChat-dialog {
+  font-style: italic;
+  position: relative;
+  top: 2%;
+  font-size: 13px;
+  color: whitesmoke;
+}
+
+#del-room-btn {
+  margin-top: 20%;
+  color: wheat;
+  font-size: 10px;
+}

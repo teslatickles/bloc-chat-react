@@ -1,0 +1,49 @@
+#sans-img {
+  height: 30%;
+  width: 30%;
+}
+
+#sans-msg {
+  display: block;
+  position: relative;
+  background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_371629.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: gainsboro;
+  height: auto;
+  width: auto;
+  padding: 1em 0.2em 6.3em 0.2em;
+  margin-bottom: 1em;
+  border-radius: 15px;
+  border: groove midnightblue;
+  box-shadow: 15px 10px 15px 10px darkslategray;
+}
+
+p#p1 {
+  display: block;
+  position: relative;
+  padding-top: 3.5em;
+  color: gainsboro;
+}
+
+button#button-fun {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 2em;
+  outline: none;
+  color: #fff;
+  background-color: seagreen;
+  border-radius: 100px;
+  box-shadow: 0 7px #999;
+}
+
+button#button-fun:hover {
+  color: #eee23f;
+}
+
+button#button-fun:active {
+  background-color: #eee23f;
+  box-shadow: 0 3px #555;
+  transform: translateY(4px);
+}

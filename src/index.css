@@ -1,39 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background-image: url();
   background-color: whitesmoke;
-}
-
-#bar {
-  overflow: none;
-  color: #333d33;
-  float: top;
-  text-align: left;
-  padding: 2px;
-  text-decoration: none;
-  width: 22%;
-  padding-top: 2px;
-  margin-top: 35px;
-  margin-left: 15%;
-}
-
-card {
-  display: flex;
-  max-width: 145px;
-  max-height: 88px;
-}
-
-#sign-in {
-  font-size: 15px;
-  margin-bottom: 5px;
-  padding-right: 9px;
-}
-
-#sign-out {
-  font-size: 14px;
-  padding-right: 9px;
-}
-
-#profile-pic {
-  position: relative;
+  scroll-behavior: smooth;
 }
 
 #app-bar {
@@ -52,11 +24,6 @@ card {
   padding: 5px;
 }
 
-#chat-name {
-  color: whitesmoke;
-  font-size: 15px;
-}
-
 #username {
   color: lightslategray;
   display: block;
@@ -73,28 +40,6 @@ card {
   width: 0.1%;
 }
 
-#user-msg {
-  position: relative;
-  left: -40%;
-  text-decoration-line: none;
-  text-decoration-color: azure;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-#msg-content {
-  position: relative;
-  padding-left: 5px;
-  font-size: 13px;
-  width: 90%;
-}
-
-#time-sent {
-  padding: 5px;
-  font-size: 11px;
-  width: 5%;
-}
-
 #top-buttons {
   float: top;
   margin-left: 65px;
@@ -104,17 +49,6 @@ card {
   margin-left: 20px;
   margin-top: 10px;
   padding: 2px;
-}
-
-#roomlist {
-  padding-top: 15px;
-  cursor: pointer;
-}
-
-#room-header {
-  left: 13%;
-  position: relative;
-  float: left;
 }
 
 #trash {
@@ -131,14 +65,8 @@ card {
   padding-left: 30px;
 }
 
-#chat-icon {
-  padding: 15px;
-  padding-bottom: 15px;
-}
-
 #newRoom-icon {
   color: whitesmoke;
-  padding: 2px;
 }
 
 #newChat-dialog {
@@ -149,45 +77,8 @@ card {
   font-size: 13px;
 }
 
-#active-room {
-  overflow: auto;
-  color: #333d33;
-  background-color: whitesmoke;
-  width: 85%;
-  font-size: 25px;
-  display: flex;
-  float: left;
-  left: 40%;
-  size: 24px;
-  padding-top: 5px;
-  padding-bottom: 8px;
-  position: relative;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  z-index: 5;
-}
-
 #new-fieldset {
   border: black;
-}
-
-.Frame {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 80%;
-}
-
-#message-list {
-  display: block;
-  height: 55%;
-  width: 50%;
-  padding: 8px;
-  padding-top: 8px;
-  overflow: none;
-  word-break: normal;
-  z-index: 5;
 }
 
 #msg-tbl {
@@ -197,42 +88,6 @@ card {
   align-content: left;
   right: -30%;
   width: 100%;
-}
-
-table {
-  table-layout: auto;
-  width: 75%;
-}
-
-th,
-td {
-  text-align: left;
-  padding: 0px;
-  width: 75%;
-  margin-right: 5px;
-}
-
-td {
-  position: relative;
-  padding: 0px;
-  margin-right: 125px;
-  width: 75%;
-}
-
-tr {
-  margin-right: 150px;
-  width: 75%;
-  height: 15%;
-}
-
-tr:nth-child(even) {
-  color: lightslategray;
-  background-color: whitesmoke;
-}
-
-tr:nth-child(odd) {
-  color: black;
-  background-color: lightslategray;
 }
 
 #user {
@@ -274,87 +129,8 @@ tr:nth-child(odd) {
   padding-right: 10px;
 }
 
-#addRoom {
-  margin-top: 8px;
-}
-
-#room-name {
-  background-color: wheat;
-  width: 15%;
-  padding-bottom: 5px;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
-.single-message {
-  display: block;
-  border-bottom: invisible;
-  color: darkgreen;
-  font-size: 13px;
-  width: 75%;
-  margin-left: 15px;
-  margin-right: 100px;
-  padding: 5px 5px;
-  font-family: Fira Code;
-  text-align: justify;
-  text-justify: inter-word;
-  word-wrap: break-word;
-}
-
-.roomSidenav {
-  height: 100%;
-  width: 13%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-top: 20px;
-  color: beige;
-  margin-right: 15px;
-}
-
-.roomSidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: lightslategray;
-  display: block;
-}
-
-.roomSidenav a:hover {
-  color: #f1f1f1;
-}
-
-#room-top-bar {
-  background-color: #111;
-  padding: 10px;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
-#room-btm-bar {
-  background-color: #111;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  bottom: 0;
-}
-
 main {
   margin-left: 180px;
   font-size: 25px;
   padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-  .roomSidenav {
-    padding-top: 15px;
-  }
-  .roomSidenav a {
-    font-size: 18px;
-  }
 }

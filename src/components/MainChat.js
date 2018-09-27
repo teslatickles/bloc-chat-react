@@ -35,7 +35,7 @@ class MainChat extends Component {
 
   render() {
     return (
-      <div className="MainChat">
+      <div>
         <User
           firebase={firebase}
           setUser={this.setUser.bind(this)}
@@ -51,6 +51,7 @@ class MainChat extends Component {
           handleRoom={this.handleClick.bind(this)}
           activeRoom={this.state.activeRoom}
           user={this.state.user}
+          modState={this.props.modState}
         />
       </div>
     );
